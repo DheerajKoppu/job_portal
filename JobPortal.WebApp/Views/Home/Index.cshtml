@@ -36,33 +36,39 @@
 <!-- Start popular-post Area -->
 <section class="popular-post-area pt-100">
     <div class="container" >
+        <div class="title text-center">
+            <h1 class="mb-10">Top Jobs</h1>
+        </div>
         <div class="row align-items-center">
-            <div class="active-popular-post-carusel">
-                @foreach (var job in ViewBag.RandomJobs)
-                {
-                    <div class="single-popular-post d-flex flex-row"
-                    style="border-radius: 10px; color: white; background-color: #000000; padding: 10px;">
-                        <div class="thumb">
-                            <img href="/job/@job.Slug" src="https://localhost:7211/images/employers/@job.AppUser.UrlAvatar" alt="job image" style="border-radius:5px" width="70" height="70" >
-                            <a class="btns text-capitalize" style="width:100px; text-align:center; border-radius:5px" href="/job/@job.Slug">View job</a>
-                        </div>
-                        <div class="details">
-                            <a href="/job/@job.Slug"><h4>@job.Name</h4></a>
-                            <p style="color: #ccc"><span class="lnr lnr-hourglass"></span> @GetTimeAgo(job.CreateDate)</p>
-                            <strong><a href="/job?slug=@job.Province.Slug" style="color: #ccc;"><span class="lnr lnr-map-marker"></span> @job.Province.Name</a></strong>
-                            <p>Job Nature: @job.Time.Name</p>
-                            <p class="address"><span class="lnr lnr-book"></span> @job.Title.Name</p>
-                            <p class="address">Salary Range: $@job.MinSalary - @job.MaxSalary </p>
-                            <ul class="tags" style="border-radius:10px">
-                                <!-- Skill -->
-                                <li style="border-radius:10px">
-                                    <ul class="skill-list">
-                                        <span class="lnr lnr-tag"></span>
+<div class="active-popular-post-carusel">
+    @foreach (var job in ViewBag.RandomJobs)
+    {
+        <div class="single-popular-post d-flex flex-row"
+             style="border-radius: 10px; color: black; background-color: #FFFFFF; padding: 10px;">
+            <div class="thumb">
+                <img href="/job/@job.Slug" src="https://localhost:7211/images/employers/@job.AppUser.UrlAvatar" alt="job image" style="border-radius:5px" width="70" height="70" >
+                <a class="btns text-capitalize" style="width:100px; text-align:center; border-radius:5px" href="/job/@job.Slug">View job</a>
+            </div>
+            <div class="details">
+                            <a href="/job/@job.Slug"; style="color: black"><h4>@job.Name</h4></a>
+                <p style="color: #ccc"><span class="lnr lnr-hourglass"></span> @GetTimeAgo(job.CreateDate)</p>
+                <strong><a href="/job?slug=@job.Province.Slug" style="color: #ccc;"><span class="lnr lnr-map-marker"></span> @job.Province.Name</a></strong>
+                <p>Job Nature: @job.Time.Name</p>
+                <p class="address"><span class="lnr lnr-book"></span> @job.Title.Name</p>
+                <p class="address">Salary Range: $@job.MinSalary - $@job.MaxSalary </p>
+                <ul class="tags" style="border-radius:10px">
+                    <!-- Skill -->
+                                <li style="border-radius: 10px; margin-top: 10px; padding: 5px;">
+                                    <ul class="skill-list" style="margin-top: 5px;">
+                                        <span class="lnr lnr-tag" style="margin-right: 5px;"></span>
                                         @foreach (var skill in job.Skills)
                                         {
-                                            <li style="display: inline-block; margin-right: 5px;">
+                                            <li style="display: inline-block; margin-right: 5px; margin-bottom: 5px;">
                                                 <strong>
-                                                    <a href="/job?slug=@skill.Slug" style="color: black; background-color: white; padding: 2px 10px; border-radius: 20px; text-decoration: none;">
+                                                    <a href="/job?slug=@skill.Slug"
+                                                       style="color: white; background-color: #4A78FF; padding: 3px 8px; border-radius: 8px; text-decoration: none; font-weight: normal;"
+                                                       onmouseover="this.style.backgroundColor='#3A68DF'; this.style.color='black';"
+                                                       onmouseout="this.style.backgroundColor='#4A78FF'; this.style.color='white';">
                                                         @skill.Name
                                                     </a>
                                                 </strong>
@@ -70,11 +76,12 @@
                                         }
                                     </ul>
                                 </li>
+
                             </ul>
-                        </div>
-                    </div>
-                }
             </div>
+        </div>
+    }
+</div>
         </div>
     </div>
 </section>
@@ -87,8 +94,7 @@
             <div class="menu-content pb-60 col-lg-10">
                 <div class="title text-center">
                     <h1 class="mb-10">Featured Skill Categories</h1>
-                    <p>Who are in extremely love with eco friendly system.</p>
-                </div>
+                    </div>
             </div>
         </div>
         <div class="row">
@@ -114,8 +120,7 @@
         <div class="row d-flex justify-content-center">
             <div class="menu-content pb-30 col-lg-10">
                 <div class="title text-center">
-                    <h1 class="mb-10">TOP EMPLOYERS</h1>
-                    <p>Recommend top employers</p>
+                    <h1 class="mb-10">Top Employers</h1>
                 </div>
             </div>
         </div>
@@ -145,18 +150,6 @@
         </div>
     </div>
 </section>
-<br /><br /><br />
-<!-- Start callto-action Area -->
-<section class="" id="join">
-    <div class="container">
-        <div class="row d-flex justify-content-center">
-            <div class="menu-content col-lg-9">
-
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End calto-action Area -->
 
 <!-- Start download Area -->
 <section class="download-area section-gap" id="app">

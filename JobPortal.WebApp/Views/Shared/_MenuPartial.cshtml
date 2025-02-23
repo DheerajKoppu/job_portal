@@ -11,17 +11,17 @@
     var isInRoleAdmin = User.IsInRole("Admin");
 }
 
-<li class="menu-active"><a href="/">Home</a></li>
-<li><a href="/job">Jobs</a></li>
-<li><a href="/company">Companies</a></li>
+<li class="menu-active color_and_hover"><a href="/">Home</a></li>
+<li class="color_and_hover"><a href="/job">Jobs</a></li>
+<li class="color_and_hover"><a href="/company">Companies</a></li>
+
 @if (isSignedIn)
 {
     if (isInRoleUser)
     {
-        <li><a href="/apply/@account.Id">Interview</a></li>
+        <li class="color_and_hover"><a href="/apply/@account.Id">Interview</a></li>
     }
 }
-
 
 @if (isSignedIn)
 {
@@ -29,7 +29,7 @@
     {
         <li class="menu-has-children">
             <a href="#" class="ticker-btn">@(account.FullName ?? account.UserName)</a>
-            <ul>
+            <ul style="border-radius: 10px; padding: 10px; background-color: #f0f0f0; list-style-type: none;">
                 <li><a href="/company/@account.Slug">Profile</a></li>
                 <li><a href="/change-password">Change Password</a></li>
             </ul>
@@ -42,7 +42,7 @@
     {
         <li class="menu-has-children">
             <a href="#" class="ticker-btn">Hi, @(account.FullName ?? account.UserName)</a>
-            <ul>
+            <ul style="border-radius: 10px; padding: 10px; background-color: #f0f0f0; list-style-type: none;">
                 <li><a href="/change-password">Change Password</a></li>
             </ul>
         </li>
@@ -53,8 +53,8 @@
     else
     {
         <li class="menu-has-children">
-            <a href="#" class="ticker-btn">Hi @(account.FullName ?? account.UserName) </a>
-            <ul>
+            <a href="#" class="ticker-btn">Hi @(account.FullName ?? account.UserName)</a>
+            <ul style="border-radius: 10px; padding: 10px; background-color: #f0f0f0; list-style-type: none;">
                 <li><a href="/change-password">Change Password</a></li>
             </ul>
         </li>

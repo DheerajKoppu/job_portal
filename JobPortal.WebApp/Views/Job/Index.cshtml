@@ -15,24 +15,24 @@
         align-items: center;
         margin-top: 20px;
     }
-    
-    .pagination li {
-        margin: 0 5px;
-    }
 
-    .pagination li a {
-        display: inline-block;
-        padding: 5px 10px;
-        border: 1px solid #ccc;
-        color: #333;
-        text-decoration: none;
-        border-radius: 5px;
-    }
+        .pagination li {
+            margin: 0 5px;
+        }
 
-    .pagination li.active a {
-        background-color: #333;
-        color: #fff;
-    }
+            .pagination li a {
+                display: inline-block;
+                padding: 5px 10px;
+                border: 1px solid #ccc;
+                color: #333;
+                text-decoration: none;
+                border-radius: 5px;
+            }
+
+            .pagination li.active a {
+                background-color: #333;
+                color: #fff;
+            }
 </style>
 
 <!-- Start banner Area -->
@@ -44,7 +44,7 @@
                 <h1 class="text-white">
                     @if (ViewBag.Time == null && ViewBag.Province == null && ViewBag.Skill == null && ViewBag.Employer == null)
                     {
-                        <text>@ViewBag.jobCount IT Jobs For Developers</text>
+                        <text>@ViewBag.jobCount Jobs Available</text>
                     }
                     else
                     {
@@ -67,37 +67,46 @@
     <div class="container">
         <div class="row justify-content-center d-flex">
             <div class="col-lg-8 post-list">
-                
+
                 <!-- Time view component -->
                 <vc:time></vc:time>
 
                 <!-- Job list -->
-                @if(Model.Any())
+                @if (Model.Any())
                 {
                     @foreach (var job in Model)
                     {
                         <div class="single-post d-flex flex-row">
-                            <!-- Job skill -->
+                            <!-- Left Column: Image, Location, and Skills -->
                             <div class="thumb" style="align-items:center">
-                                <a href="/company/@job.AppUser.Slug"><img href="/job/@job.Slug" style="border-radius:10px" width="200" height="100" src="https://localhost:7211/images/employers/@job.AppUser.UrlAvatar" alt="employer image"></a>
+                                <a href="/company/@job.AppUser.Slug">
+                                    <img href="/job/@job.Slug" style="border-radius:10px" width="200" height="100" src="https://localhost:7211/images/employers/@job.AppUser.UrlAvatar" alt="employer image">
+                                </a>
                                 <ul class="tags" style="justify-content:center; display: grid; border-radius:10px">
                                     <!-- Province -->
                                     <li style="border-radius:10px">
-                                        <strong><a href="/job?slug=@job.Province.Slug" style="color: black"><span class="lnr lnr-map-marker"></span> @job.Province.Name</a></strong>
+                                        <strong>
+                                            <a href="/job?slug=@job.Province.Slug">
+                                                <span class="lnr lnr-map-marker"></span> @job.Province.Name
+                                            </a>
+                                        </strong>
                                     </li>
                                 </ul>
                                 <hr />
                                 <ul class="tags" style="justify-content:center; text-align: center; border-radius:10px">
-                                    <!-- Skill -->
+                                    <!-- Skills -->
                                     @foreach (var skill in job.Skills)
                                     {
                                         <li style="border-radius:10px">
-                                            <strong><a href="/job?slug=@skill.Slug" style="color: black">@skill.Name</a></strong>
+                                            <strong>
+                                                <a href="/job?slug=@skill.Slug">@skill.Name</a>
+                                            </strong>
                                         </li>
                                     }
                                 </ul>
                             </div>
-                            <!-- End job skill -->
+                            <!-- End Left Column -->
+                            <!-- Right Column: Job Details -->
                             <div class="details" style="margin-left:20px; width:600px;">
                                 <div class="title d-flex flex-row justify-content-between">
                                     <div class="titles">
@@ -113,7 +122,7 @@
                                     <div>
                                         <h5><strong>Job Nature: @job.Time.Name</strong></h5>
                                         <h5 style="color: blue"><span class="lnr lnr-book"></span> <strong>@job.Title.Name</strong></h5>
-                                        <h5 style="color: green"><strong>Salary Range: Salary Range: $@job.MinSalary - @job.MaxSalary </strong></h5>
+                                        <h5 style="color: green"><strong>Salary Range: $@job.MinSalary - $@job.MaxSalary </strong></h5>
                                     </div>
                                     <div style="text-align:right; margin-top: 40px">
                                         <ul class="btns">
@@ -133,7 +142,6 @@
                     </div>
                 }
                 <!-- End job list -->
-
                 <!-- Page list -->
                 <div class="text-center">
                     <ul class="pagination">
@@ -157,14 +165,14 @@
                             }
                         }
                         @Html.PagedListPager((IPagedList)Model,
-                        page => Url.Action("Index", new { slug, page }),
-                        new PagedListRenderOptions
+                                 page => Url.Action("Index", new { slug, page }),
+                                 new PagedListRenderOptions
                         {
                             Display = PagedListDisplayMode.IfNeeded,
                             LiElementClasses = new string[] { "page-item" },
                             UlElementClasses = new string[] { "pagination" },
                             PageClasses = new string[] { "page-link" },
-                            MaximumPageNumbersToDisplay = 5, // Maximum number of pages displayed
+                            MaximumPageNumbersToDisplay = 5,
                             LinkToPreviousPageFormat = "<span aria-hidden=\"true\">&lsaquo;</span>",
                             LinkToNextPageFormat = "<span aria-hidden=\"true\">&rsaquo;</span>",
                             LinkToFirstPageFormat = "<span aria-hidden=\"true\">&lsaquo;&lsaquo;</span>",
@@ -186,12 +194,10 @@
 <section class="callto-action-area section-gap">
     <div class="container">
         <div class="row d-flex justify-content-center">
-
         </div>
     </div>
 </section>
 <!-- End calto-action Area -->
-
 @functions {
     public string GetTimeAgo(DateTime? createDate)
     {

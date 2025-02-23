@@ -1517,10 +1517,12 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
-
-.confirm-switch input:checked + label:after {
-  left: 19px;
+body {
+    background-color: #F5F5F9;
 }
+
+
+
 
 .confirm-switch input:checked + label:before {
   background: #4cd3e3;
@@ -1890,12 +1892,12 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     transition: all 0.5s;
     z-index: 997;
-    background: #000000 !important; /* Set solid background */
+    background: #F5F5F9 !important; /* Set solid background */
     background-image: none !important; /* Ensure no image */
 }
 
     #header.header-scrolled {
-        background: #000000 !important; /* Keep same background on scroll */
+        background: #F5F5F9 !important; /* Keep same background on scroll */
         transition: all 0.5s;
     }
 
@@ -1948,6 +1950,17 @@ h1, h2, h3, h4, h5, h6 {
         background-color: #1e2235;
         color: #4A78FF;
     }
+/* Default state: Black color */
+.color_and_hover a {
+    color: #000000 !important; /* Black */
+    transition: color 0.3s ease-in-out !important;
+}
+
+    /* Hover state: Change to blue */
+    .color_and_hover a:hover {
+        color: #4A78FF !important; /* Blue */
+    }
+
 
 
 @media (max-width: 960px) {
@@ -1977,6 +1990,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav-menu li {
   position: relative;
   white-space: nowrap;
+  color: #FFFFFF;
 }
 
 .nav-menu > li {
@@ -2215,7 +2229,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .section-gap {
-  padding: 120px 0;
+  padding: 80px 0;
 }
 
 .section-title {
@@ -2491,7 +2505,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .single-popular-post h4 {
-  color: #fff;
+  color: #000000;
 }
 
 .single-popular-post h6 {
@@ -2589,50 +2603,53 @@ body.mobile-nav-active #mobile-nav-toggle {
   text-align: right;
   margin-bottom: 20px;
 }
+    .post-list .cat-list li {
+        text-align: center;
+        margin-right: 10px;
+        width: auto;
+        display: inline-block;
+        background-color: #4A78FF; /* Updated background */
+        color: #fff; /* White text */
+        border: none; /* Removed border */
+        border-radius: 8px; /* Rounded corners */
+        padding: 6px 20px; /* Matched padding */
+        text-transform: capitalize;
+        font-weight: 600;
+        transition: background 0.3s ease, color 0.3s ease; /* Smooth transition */
+    }
 
-.post-list .cat-list li {
-  text-align: center;
-  margin-right: 10px;
-  width: auto;
-  display: inline-block;
-  background-color: #fff;
-  border: 1px solid #eee;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-  padding: 5px 10px;
-}
+        .post-list .cat-list li a {
+            text-transform: capitalize;
+            font-weight: 600;
+            color: #fff; /* White text */
+        }
 
-.post-list .cat-list li a {
-  text-transform: capitalize;
-  font-weight: 600;
-  color: #222;
-}
+        .post-list .cat-list li:hover {
+            background-color: #1e2235; /* Hover background */
+        }
 
-.post-list .cat-list li:hover {
-  background-color: #4A78FF;
-}
-
-.post-list .cat-list li:hover a {
-  color: #fff;
-}
+            .post-list .cat-list li:hover a {
+                color: #4A78FF; /* Hover text color */
+            }
 
 @media (max-width: 414px) {
-  .post-list .cat-list {
-    text-align: left;
-  }
-  .post-list .cat-list li {
-    margin-bottom: 10px;
-    font-size: 10px;
-  }
+    .post-list .cat-list {
+        text-align: left;
+    }
+
+        .post-list .cat-list li {
+            margin-bottom: 10px;
+            font-size: 10px;
+        }
 }
 
 .post-list .single-post {
-  padding: 30px;
-  background-color: #f9f9ff;
-  margin-bottom: 30px;
+    padding: 30px;
+    background-color: #FFFFFF;
+    margin-bottom: 30px;
+    border-radius: 8px; /* Rounded corners */
 }
+
 
 .post-list .single-post h6 {
   margin-top: 10px;
@@ -2660,67 +2677,72 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .post-list .single-post .btns li {
-  display: inline-block;
-  background-color: #fff;
-  border: 1px solid #eee;
-  padding: 10px 15px;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+    display: inline-block;
+    background-color: #4A78FF; /* Updated background */
+    color: #fff; /* White text */
+    border: none; /* Removed border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px 15px; /* Keep original padding */
+    text-transform: capitalize;
+    font-weight: 500;
+    transition: background 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
 
-.post-list .single-post .btns li i, .post-list .single-post .btns li a {
-  text-transform: capitalize;
-  font-weight: 500;
-  color: #222;
-}
+    .post-list .single-post .btns li i,
+    .post-list .single-post .btns li a {
+        text-transform: capitalize;
+        font-weight: 500;
+        color: #fff; /* White text */
+    }
 
-.post-list .single-post .btns li:hover {
-  background-color: #4A78FF;
-}
+    .post-list .single-post .btns li:hover {
+        background-color: #1e2235; /* Hover background */
+    }
 
-.post-list .single-post .btns li:hover a, .post-list .single-post .btns li:hover i {
-  color: #fff;
-}
+        .post-list .single-post .btns li:hover a,
+        .post-list .single-post .btns li:hover i {
+            color: #4A78FF; /* Hover text color */
+        }
 
 @media (max-width: 414px) {
-  .post-list .single-post .btns li {
-    margin-bottom: 5px;
-  }
+    .post-list .single-post .btns li {
+        margin-bottom: 5px;
+    }
 }
+
 
 .post-list .single-post .thumb .tags {
-  margin-top: 30px;
+    margin-top: 30px;
 }
 
+
+
+    /* Initial State: Purple Background, White Text */
 .post-list .single-post .thumb .tags li {
-  margin-bottom: 5px;
-  display: inline-block;
-  background: #fff;
-  border: 1px solid #eee;
-  padding: 6px 15px;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+    margin-bottom: 5px;
+    display: inline-block;
+    background: #4A78FF; /* Old Purple */
+    padding: 6px 15px;
+    color: #ffffff !important; /* White Text */
+    transition: all 0.3s ease-in-out;
 }
 
-.post-list .single-post .thumb .tags li a {
-  color: #777777;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
+        .post-list .single-post .thumb .tags li a {
+            color: #ffffff; /* White Text */
+            transition: all 0.3s ease-in-out;
+        }
 
-.post-list .single-post .thumb .tags li:hover {
-  background-color: #4A78FF;
-}
+        /* Hover Effect: Darker Purple */
+    .post-list .single-post .thumb .tags li:hover {
+        background-color: #1e2235;
+        color: #4A78FF;
+    }
 
-.post-list .single-post .thumb .tags li:hover a {
-  color: #fff;
-}
+            /* Ensure Text Stays White on Hover */
+            .post-list .single-post .thumb .tags li:hover a {
+                color: #ffffff;
+            }
+
 
 @media (max-width: 736px) {
   .post-list h4 {
@@ -2746,13 +2768,22 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .post-list .loadmore-btn {
-  text-align: center;
-  background-color: #4A78FF;
-  color: #fff;
-  padding: 8px 15px;
-  margin-top: 60px;
-  max-width: 200px;
+    text-align: center;
+    background: #4A78FF;
+    color: #fff;
+    padding: 8px 15px;
+    margin-top: 20px;
+    max-width: 200px;
+    border-radius: 8px; /* rounded corners */
+    transition: background 0.3s ease, color 0.3s ease; /* smooth hover transition */
+    cursor: pointer; /* improves UX */
+    display: inline-block; /* ensures proper button-like appearance */
 }
+
+    .post-list .loadmore-btn:hover {
+        background-color: #1e2235;
+        color: #4A78FF;
+    }
 
 .sidebar .owl-carousel .owl-item img {
   width: auto !important;
@@ -2791,37 +2822,47 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .sidebar .single-slidebar {
-  background-color: #f9f9ff;
-  padding: 30px 20px;
-  margin-bottom: 30px;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    border-radius: 12px; /* Adjust the value for more or less rounding */
 }
+
 
 .sidebar .single-slidebar h4 {
   margin-bottom: 20px;
 }
 
 .sidebar .single-slidebar .cat-list li {
-  padding: 0px 10px;
-  background-color: #fff;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+    padding: 0px 10px;
+    background-color: #4A78FF;
+    color: #FFFFFF; /* White text */
+    border-radius: 8px; /* Adjust the value for more or less rounding */
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
 }
 
-.sidebar .single-slidebar .cat-list li:hover a {
-  color: #fff;
-}
+    .sidebar .single-slidebar .cat-list li:hover,
+    .sidebar .single-slidebar .cat-list li a:hover {
+        background-color: #1e2235 !important;
+    }
+
+        .sidebar .single-slidebar .cat-list li:hover a {
+            color: #4A78FF;
+        }
 
 .sidebar .single-slidebar .cat-list p {
   margin-bottom: 0;
 }
 
-.sidebar .single-slidebar .cat-list a {
-  color: #777;
-  padding: 10px;
-  margin-bottom: 10px;
-}
+    .sidebar .single-slidebar .cat-list a {
+        color: #ffffff;
+        background-color: #4A78FF;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
 
 .sidebar .single-rated img {
   margin-bottom: 20px;
@@ -2847,23 +2888,21 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .sidebar .single-rated .btns {
-  background-color: #4A78FF;
-  color: #fff;
-  border: 1px solid transparent;
+  background-color: #4A78FF; /* Default background */
+  color: #fff; /* White text */
+  border: none; /* Removed border for cleaner look */
   display: inline-block;
   margin-top: 10px;
   padding: 10px 25px;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  border-radius: 8px; /* Rounded corners */
+  transition: color 0.3s ease; /* Only smooth text transition */
 }
 
 .sidebar .single-rated .btns:hover {
-  background-color: transparent;
-  border-color: #4A78FF;
-  color: #4A78FF;
+  background-color: #1e2235 !important; /* Instant background change */
+  color: #4A78FF; /* Text color change */
 }
+
 
 .sidebar .single-blog {
   background-size: cover !important;
@@ -3557,9 +3596,9 @@ body.mobile-nav-active #mobile-nav-toggle {
   cursor: pointer;
 }
 
-.single-service:hover h4, .single-service:hover p, .single-service:hover .lnr {
-  color: #fff;
-}
+    .single-service:hover h4, .single-service:hover p, .single-service:hover .lnr {
+        color: #4A78FF !important;
+    }
 
 .single-service p {
   -webkit-transition: all 0.3s ease 0s;
