@@ -15,7 +15,7 @@
         <div class="row search-page-top d-flex align-items-center justify-content-center">
             <div class="col-lg-12">
                 <h1 class="text-white">
-                    <span>@jobCount+</span> Jobs posted week ago
+                    <span>@jobCount+</span> Jobs posted in the last week
                 </h1>
                 <!--Search box-->
                 @Html.Partial("../Shared/_SearchBoxPartial.cshtml")
@@ -53,9 +53,8 @@
                             <a href="/job/@job.Slug"; style="color: black"><h4>@job.Name</h4></a>
                 <p style="color: #ccc"><span class="lnr lnr-hourglass"></span> @GetTimeAgo(job.CreateDate)</p>
                 <strong><a href="/job?slug=@job.Province.Slug" style="color: #ccc;"><span class="lnr lnr-map-marker"></span> @job.Province.Name</a></strong>
-                <p>Job Nature: @job.Time.Name</p>
-                <p class="address"><span class="lnr lnr-book"></span> @job.Title.Name</p>
-                <p class="address">Salary Range: $@job.MinSalary - $@job.MaxSalary </p>
+                <p>Work Schedule: @job.Time.Name</p>
+                <p class="address">Hourly Wage: $@job.MinSalary - $@job.MaxSalary </p>
                 <ul class="tags" style="border-radius:10px">
                     <!-- Skill -->
                                 <li style="border-radius: 10px; margin-top: 10px; padding: 5px;">

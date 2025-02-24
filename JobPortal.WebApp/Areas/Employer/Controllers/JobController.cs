@@ -101,7 +101,7 @@ namespace JobPortal.WebApp.Areas.Employer.Controllers
             {
                 Name = job.Name,
                 Description = job.Description,
-                Introduce = job.Introduce,
+                Introduce = job.Description,
                 ObjectTarget = job.ObjectTarget,
                 Experience = job.Experience,
                 ProvinceId = job.ProvinceId,
@@ -133,7 +133,7 @@ namespace JobPortal.WebApp.Areas.Employer.Controllers
                 job.Name = model.Name;
                 job.Slug = TextHelper.ToUnsignString(job.Name).ToLower();
                 job.Description = model.Description;
-                job.Introduce = model.Introduce;
+                job.Description = model.Introduce;
                 job.Experience = model.Experience;
                 job.ObjectTarget = model.ObjectTarget;
                 job.MinSalary = model.MinSalary;

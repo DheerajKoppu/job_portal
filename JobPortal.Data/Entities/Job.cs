@@ -40,7 +40,7 @@ namespace JobPortal.Data.Entities
         public int? MinSalary { get; set; }
         [Display(Name = "Max salary")]
         [Range(1, int.MaxValue, ErrorMessage = "Please enter valid salary.")]
-        //[SalaryRange("MinSalary")] //Salary Range Validation Attribute
+        //[SalaryRange("MinSalary")] //Hourly Wage Validation Attribute
         public int? MaxSalary { get; set; }
         public AppUser? AppUser { get; set; }
         [Display(Name = "Employer")]

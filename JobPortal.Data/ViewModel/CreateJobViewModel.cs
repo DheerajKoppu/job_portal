@@ -29,7 +29,7 @@ namespace JobPortal.Data.ViewModel
         public int? MinSalary { get; set; }
         [Display(Name = "Max salary")]
         [Range(1, int.MaxValue, ErrorMessage = "Please enter valid salary.")]
-        //[SalaryRange("MinSalary")] //Salary Range Validation Attribute
+        //[SalaryRange("MinSalary")] //Hourly Wage Validation Attribute
         public int? MaxSalary { get; set; }
         [Display(Name = "Skills")]
         public List<int> SkillIds { get; set; }
