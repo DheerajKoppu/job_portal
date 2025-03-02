@@ -320,7 +320,7 @@
                                             }
                                             @if (CV.CVStatus == -1)
                                             {
-                                                <button type="button" onclick="onContinue('@CV.CVId')" class="btn btn-primary">Continue CV</button>
+                                                <button type="button" onclick="onContinue('@CV.CVId')" class="btn btn-primary">Continue Resume</button>
                                             }
                                         </div>
                                     </section>
@@ -332,13 +332,14 @@
                                                 <th>Phone number</th>
                                                 <th>Email</th>
                                                 <th>Apply date</th>
-                                                <th>Your CV</th>
+                                                <th>Your Resume</th>
                                             </tr>
                                         </thead>
                                         <tbody id="items">
                                             <tr class="targetfields">
                                                 <td>
-                                                    <img src="https://localhost:7211/images/employers/@CV.EmployerLogo" alt="@CV.JobName" style="width: 100px">
+                                                    <img src="" alt="@CV.JobName" style="width: 100px">
+                                                        <img src="https://localhost:7211/images/employers/@CV.EmployerLogo" alt="@CV.JobName" style="width: 100px">
                                                 </td>
                                                 <td>
                                                     <span>@CV.JobName</span>
@@ -353,7 +354,7 @@
                                                     <span>@CV.ApplyDate.ToString("dd/MM/yyyy")</span>
                                                 </td>
                                                 <td>
-                                                    <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#viewYourCVModal-@CV.CVId">View CV</a>
+                                                    <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#viewYourCVModal-@CV.CVId">View Resume</a>
 
                                                     <!-- Modal -->
                                                     <div class="modal fade" id="viewYourCVModal-@CV.CVId" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -403,8 +404,8 @@
     <script>
         function onDelete(id) {
             Swal.fire({
-                title: 'Delete this CV?',
-                text: "Are you sure to delete the CV?",
+                title: 'Delete this Resume?',
+                text: "Are you sure to delete the Resume?",
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
@@ -423,8 +424,8 @@
 
         function onCancel(id) {
             Swal.fire({
-                title: 'Cancel this CV?',
-                text: "Are you sure to cancel CV?",
+                title: 'Cancel this Resume?',
+                text: "Are you sure to cancel Resume?",
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
@@ -443,8 +444,8 @@
 
         function onContinue(id) {
             Swal.fire({
-                title: 'Continue this CV?',
-                text: "Are you sure to continue CV?",
+                title: 'Continue this Resume?',
+                text: "Are you sure to continue Resume?",
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
@@ -463,7 +464,7 @@
 
         function onWaiting() {
             Swal.fire({
-                title: 'Congratulations ! Your CV has been accepted.',
+                title: 'Congratulations ! Your Resume has been accepted.',
                 text: 'Please wait for the feedback from the employer.',
                 icon: 'info',
                 confirmButtonText: 'OK'

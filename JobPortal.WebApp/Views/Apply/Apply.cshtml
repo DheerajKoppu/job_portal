@@ -5,7 +5,7 @@
 }
 
 <!-- CKEditor -->
-<script src="//cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
+<script src="//cdn.ckeditor.com/4.25.1-lts/standard/ckeditor.js"></script>
 <!-- Start banner Area -->
 <section class="banner-area relative" id="home">
     <div class="overlay overlay-bg"></div>
@@ -28,19 +28,19 @@
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 style="text-align: center" class="card-title">Apply your CV and start the adventure</h4>
+                        <h4 style="text-align: center" class="card-title">Apply your Resume and start the adventure</h4>
                         <br />
                         <div class="col-md-4i">
                             <form asp-action="Apply" enctype="multipart/form-data" id="form">
                                 <div class="row">
                                     <div class="col-md-8">
-                                        <div class="form-group">
-                                            <label asp-for="Certificate" class="control-label"></label><span class="text-danger">*</span>
+                                        <div class="form-group" hidden>
+                                            <label asp-for="Certificate" class="control-label">Certifications</label><span class="text-danger">*</span>
                                             <input asp-for="Certificate" class="form-control" />
                                             <span asp-validation-for="Certificate" class="text-danger"></span>
                                         </div>
                                         <div class="form-group">
-                                            <label asp-for="Introduce" class="control-label"></label><span class="text-danger">*</span>
+                                            <label asp-for="Introduce" class="control-label">Introduce Yourself</label><span class="text-danger">*</span>
                                             <textarea asp-for="Introduce" class="form-control" rows="3"></textarea>
                                             <span asp-validation-for="Introduce" class="text-danger"></span>
                                         </div>
@@ -51,7 +51,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group">
+                                        <div class="form-group" hidden>
                                             <label asp-for="Major" class="control-label"></label><span class="text-danger">*</span>
                                             <input asp-for="Major" class="form-control" />
                                             <span asp-validation-for="Major" class="text-danger"></span>
@@ -61,7 +61,7 @@
                                             <input asp-for="GPA" class="form-control" />
                                             <span asp-validation-for="GPA" class="text-danger"></span>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" hidden>
                                             <label asp-for="GraduatedAt" class="control-label"></label><span class="text-danger">*</span>
                                             <input asp-for="GraduatedAt" class="form-control" />
                                             <span asp-validation-for="GraduatedAt" class="text-danger"></span>
@@ -77,13 +77,12 @@
                                             <span asp-validation-for="Email" class="text-danger"></span>
                                         </div>
                                         <div class="form-group">
-                                            <label asp-for="UrlImage" class="control-label"></label><span class="text-danger">*</span>
+                                            <label asp-for="UrlImage" class="control-label">Upload Resume</label><span class="text-danger">*</span>
                                             <input type="file" asp-for="UrlImage" class="form-control" accept="image/*" id="imgInp" />
                                             <span asp-validation-for="UrlImage" class="text-danger"></span>
-                                            <img id="blah" src="#" alt="your cv image" style="width: 335px;" />
                                         </div>
                                         <div class="form-group text-center" style="margin-bottom: 15px">
-                                            <input style="background-color:forestgreen" type="button" onclick="onApply()" value="Apply" class="btn btn-primary" />
+                                            <input style="background-color:#4a78ff" type="button" onclick="onApply()" value="Apply" class="btn btn-primary" />
                                         </div>
                                     </div>
                                 </div>
@@ -129,7 +128,7 @@
             if ($('#imgInp').get(0).files.length === 0) {
                 Swal.fire(
                     'Fail',
-                    'Please select a cv image.',
+                    'Please upload your Resume.',
                     'error'
                 );
                 return; // Stop further execution

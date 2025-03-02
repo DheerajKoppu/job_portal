@@ -5,7 +5,7 @@
 }
 
 <!-- CKEditor -->
-<script src="//cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
+<script src="//cdn.ckeditor.com/4.25.1-lts/standard/ckeditor.js"></script>
 <!-- Start banner Area -->
 <section class="banner-area relative" id="home">
     <div class="overlay overlay-bg"></div>
@@ -106,10 +106,10 @@
                                             <label asp-for="ProvinceId" class="control-label"></label><span class="text-danger">*</span>
                                             <select asp-for="ProvinceId" class="form-control" asp-items="ViewBag.ProvinceId"></select>
                                         </div>
-                                        <div class="form-group">
+@*                                         <div class="form-group">
                                             <label asp-for="CountryId" class="control-label"></label><span class="text-danger">*</span>
                                             <select asp-for="CountryId" class="form-control" asp-items="ViewBag.CountryId"></select>
-                                        </div>
+                                        </div> *@
                                         <div class="form-group text-center" style="margin-bottom: 15px">
                                             <input style="background-color:forestgreen" type="button" onclick="onRegister()" value="Register" class="btn btn-primary" />
                                         </div>

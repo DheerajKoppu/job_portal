@@ -34,7 +34,7 @@ namespace JobPortal.Data.ViewModel
         [Display(Name = "Company website")]
         [StringLength(50, ErrorMessage = "The website cannot be more than 50 characters.")]
         public string? WebsiteURL { get; set; }
-        [Display(Name = "Company province")]
+        [Display(Name = "Company city")]
         public int ProvinceId { get; set; }
         [Display(Name = "Company size")]
         public string? CompanySize { get; set; }

@@ -14,6 +14,8 @@
 <li class="menu-active color_and_hover"><a href="/">Home</a></li>
 <li class="color_and_hover"><a href="/job">Jobs</a></li>
 <li class="color_and_hover"><a href="/company">Companies</a></li>
+<li class="color_and_hover"><a href="/FAQs">FAQs</a></li>
+<li class="color_and_hover"><a href="/AboutUs">About US</a></li>
 
 @if (isSignedIn)
 {
@@ -76,4 +78,144 @@ else
     <li>
         <a href="/employer/login" class="ticker-btn">For Employers</a>
     </li>
+    <!-- Chatbot Icon -->
+    <div id="chatbot-icon" onclick="toggleChat()">💬</div>
+
+    <!-- Chatbot Window -->
+    <div id="chatbot-window">
+        <div id="chatbot-header">How Can I Help You?</div>
+        <div id="chatbot-messages">
+            <p class="text_message_sender"><img alt="" aria-hidden="true" src="https://d2n4zfio24poj1.cloudfront.net/chatwidget/assets/emma.png">Viola</p>
+            <div class="text_content_wrapper" role="alert" style="width: 100%; padding-top: 3px; padding-bottom: 3px;"><span translate="no">Hi, I’m Viola. I'm programmed to help you with questions about this site. What would you like to ask me?</span></div>
+            <br />
+            Chat as an <u>Employer</u>
+            <br />
+            <br />
+            Chat as a <u>Student</u>
+        </div>
+        <div id="chatbot-input-container">
+            <input type="text" id="chatbot-input" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+            <button id="chatbot-send" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
 }
+<style>
+    /* Chatbot Icon */
+    #chatbot-icon {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #007bff;
+        color: white;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease-in-out;
+    }
+
+        #chatbot-icon:hover {
+            transform: scale(1.1);
+        }
+
+    /* Chatbot Window */
+    #chatbot-window {
+        display: none;
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        width: 90%;
+        max-width: 350px;
+        height: 450px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    #chatbot-header {
+        background-color: #007bff;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    #chatbot-messages {
+        height: 350px;
+        padding: 10px;
+        overflow-y: auto;
+        font-size: 14px;
+        background: #f1f1f1;
+    }
+
+    #chatbot-input-container {
+        display: flex;
+        padding: 5px;
+        background: white;
+        border-top: 1px solid #ccc;
+    }
+
+    #chatbot-input {
+        flex-grow: 1;
+        padding: 5px;
+        border: none;
+        outline: none;
+        font-size: 14px;
+    }
+
+    #chatbot-send {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    /* Responsive Scaling */
+    @@media screen and (max-width: 500px) {
+        #chatbot-window {
+            width: 95%;
+            height: 400px;
+            bottom: 60px;
+        }
+    }
+</style>
+<script>
+    function toggleChat() {
+        let chatWindow = document.getElementById("chatbot-window");
+        chatWindow.style.display = (chatWindow.style.display === "block") ? "none" : "block";
+    }
+
+    function sendMessage() {
+        let input = document.getElementById("chatbot-input");
+        let message = input.value.trim();
+        if (!message) return;
+
+        let chatbox = document.getElementById("chatbot-messages");
+        chatbox.innerHTML += `<div><strong>You:</strong> ${message}</div>`;
+        input.value = "";
+
+        fetch('/chatbot', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: message })
+        })
+            .then(response => response.json())
+            .then(data => {
+                chatbox.innerHTML += `<div><strong>Bot:</strong> ${data.response}</div>`;
+                chatbox.scrollTop = chatbox.scrollHeight; // Auto-scroll to latest message
+            });
+    }
+
+    function handleKeyPress(event) {
+        if (event.key === "Enter") sendMessage();
+    }
+</script>

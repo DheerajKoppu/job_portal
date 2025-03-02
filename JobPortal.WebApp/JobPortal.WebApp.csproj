@@ -19,7 +19,8 @@
 
   <ItemGroup>
     <Content Remove="Views\Company\Index.cshtml" />
-    <Content Remove="Views\Blog\Index.cshtml" />
+    <Content Remove="Views\AboutUS\Index.cshtml" />
+    <Content Remove="Views\FAQs\Index.cshtml" />
     <Content Remove="Views\Job\Index.cshtml" />
   </ItemGroup>
 
@@ -28,7 +29,8 @@
     <None Include="Areas\Employer\Views\Apply\Index.cshtml" />
     <None Include="Views\Apply\Apply.cshtml" />
     <None Include="Views\Company\Index.cshtml" />
-    <None Include="Views\Blog\Index.cshtml" />
+    <None Include="Views\AboutUS\Index.cshtml" />
+    <None Include="Views\FAQs\Index.cshtml" />
     <None Include="Views\Job\Index.cshtml" />
     <None Include="Views\Shared\Components\Category\Default.cshtml" />
     <None Include="Views\Shared\Components\Time\Default.cshtml" />
@@ -360,7 +362,6 @@
   <ItemGroup>
     <Folder Include="wwwroot\images\blogs\" />
     <Folder Include="wwwroot\images\cvs\" />
-    <Folder Include="wwwroot\images\skills\" />
   </ItemGroup>
 
   <ItemGroup>

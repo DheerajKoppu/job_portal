@@ -1,0 +1,99 @@
+﻿@model IEnumerable<JobPortal.Data.Entities.Blog>
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common;
+
+@{
+    Layout = "_Layout";
+	int startRank = ViewBag.StartRank ?? 1; 
+}
+
+<style>
+    .pagination {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+    
+    .pagination li {
+        margin: 0 5px;
+    }
+
+    .pagination li a {
+        display: inline-block;
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        color: #333;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .pagination li.active a {
+        background-color: #333;
+        color: #fff;
+    }
+</style>
+
+<!-- Start banner Area -->
+<section class="banner-area relative" id="home">
+	<div class="overlay overlay-bg"></div>
+	<div class="container">
+		<div class="row d-flex align-items-center justify-content-center">
+			<div class="about-content col-lg-12">
+				<h1 class="text-white">
+					About US
+				</h1>
+				<p class="text-white link-nav">
+					<a href="/">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="#">
+						About US
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End banner Area -->
+<!-- Start blog-posts Area -->
+<section class="blog-posts-area section-gap">
+	<div class="container">
+
+        <b>Empowering High School Students with Job Opportunities </b>
+        <br />
+        At Centurion Career Connect Portal, we believe that every high school student deserves the opportunity to gain real-world experience, develop essential skills, and kick-start their future careers. Whether you're looking for a part-time job, an internship, a summer gig, or volunteer work, we are here to connect you with the best opportunities.
+        <br />
+        <br />
+        <b>Our Mission</b>
+        <br />
+        Our mission is simple: to bridge the gap between students and employers by providing a platform where young job seekers can explore entry-level opportunities tailored to their age and skill level. We aim to make the job search process easy, safe, and rewarding for students eager to gain independence, build experience, and grow professionally.
+        <br />
+        <br />
+        <b>What We Offer</b>
+        <br />
+        ✅ <b style="color:#212529">Student-Friendly Jobs</b> – Find part-time, seasonal, and internship opportunities designed for high schoolers.
+        <br />
+        ✅ <b style="color:#212529">Career Readiness Resources</b> – Access resume-building tips, interview guidance, and career exploration tools.
+        <br />
+        ✅ <b style="color:#212529">Safe & Verified Listings</b> – We ensure all job postings are verified and suitable for students.
+        <br />
+        ✅ <b style="color:#212529">Employer Connections</b> – Connect with local businesses, companies, and organizations that value young talent.>
+        <br />
+        <br />
+        <b>Why Choose Us?</b>
+        <br />
+        💡 <b style="color:#212529">Designed for Students:</b> Unlike traditional job sites, we focus exclusively on high school job seekers, making it easier to find the right fit.
+        <br />
+        💡 <b style="color:#212529">Simple & Fast Application Process:</b> Apply to jobs with minimal experience and get matched with employers who appreciate young, motivated talent.
+        <br />
+        💡 <b style="color:#212529">Skills for the Future:</b> Gain work experience, build a strong resume, and develop skills that will help in college, careers, and beyond.
+        <br />
+        <br />
+        <b>Join Us Today!</b>
+        <br />
+        Start exploring job opportunities and take your first step toward success. Whether you're looking to earn extra money, gain experience, or build your resume, Centurion Career Connect Portal is here to support you.
+        <br />
+        📢 Start your job search today by clicking on signup link above!
+	</div>
+</section>
+<!-- End blog-posts Area -->

@@ -5,12 +5,12 @@ using X.PagedList;
 
 namespace JobPortal.WebApp.Controllers
 {
-    [Route("blog")]
-    public class BlogController : Controller
+    [Route("FAQs")]
+    public class FAQsController : Controller
     {
         private readonly DataDbContext _context;
 
-        public BlogController(DataDbContext context)
+        public FAQsController(DataDbContext context)
         {
             _context = context;
         }

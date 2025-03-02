@@ -4,9 +4,6 @@ Job Portal is a basic recruitment online website developed using the following t
 2. Entity Framework Core
 3. SQL Server
 
-# Live Demo
-- [Job Portal | ASP.NET Core MVC (.NET 6)](https://youtu.be/KEkq_Q_BOXc)
-
 # Account
 Below are the accounts used in the project with their respective roles: User, Employer, Admin
 

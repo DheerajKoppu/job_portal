@@ -1,0 +1,150 @@
+﻿@model IEnumerable<JobPortal.Data.Entities.Blog>
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common;
+
+@{
+    Layout = "_Layout";
+	int startRank = ViewBag.StartRank ?? 1; 
+}
+
+<style>
+    .pagination {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+    
+    .pagination li {
+        margin: 0 5px;
+    }
+
+    .pagination li a {
+        display: inline-block;
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        color: #333;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .pagination li.active a {
+        background-color: #333;
+        color: #fff;
+    }
+</style>
+
+<!-- Start banner Area -->
+<section class="banner-area relative" id="home">
+	<div class="overlay overlay-bg"></div>
+	<div class="container">
+		<div class="row d-flex align-items-center justify-content-center">
+			<div class="about-content col-lg-12">
+				<h1 class="text-white">
+					Frequently Asked Questions
+				</h1>
+				<p class="text-white link-nav">
+					<a href="/">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="#">
+						Frequently Asked Questions
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End banner Area -->
+<!-- Start blog-posts Area -->
+<section class="blog-posts-area section-gap">
+	<div class="container">
+
+        <b>For Job Seekers </b>
+        <br />
+        <b style="color:#212529">1. How do I create an account?</b><br />
+        To create an account, click on the "Sign Up" button and enter your email, password, and basic details. After verification, you can complete your profile and start applying for jobs.
+        <br />
+        <b style="color:#212529">2. Is it free to use the portal?</b><br />
+        Yes! Creating a profile, searching for jobs, and applying to positions are completely free for job seekers.
+        <br />
+        <b style="color:#212529">3. How do I apply for a job?</b><br />
+        Once you've found a job you're interested in, click on the "Apply" button, upload your resume (if required), and submit your application. Some employers may also request a cover letter.
+        <br />
+         <b style="color:#212529">4. Can I track my job applications?</b><br />
+        Yes. You can view the status of your applications in the "My Applications" section of your profile.
+        <br />
+        <b style="color:#212529"> 5. How do I get job recommendations?</b><br />
+        Our platform uses AI-powered matching to suggest jobs based on your skills, experience, and preferences. Make sure your profile is complete to receive the best recommendations.
+        <br />
+        <b style="color:#212529">6. Can I edit my resume after applying for jobs?</b><br />
+        Yes, but the updated resume will only be visible for future applications. Already submitted applications will retain the original version.
+        <br />
+        <b style="color:#212529">7. How do I contact an employer?</b><br />
+        Some job listings include direct contact options. Otherwise, employers will reach out to you if they are interested in your application.
+        <br />
+        <b style="color:#212529">8. How do I delete my account?</b><br />
+        Go to your account settings, select "Delete Account," and confirm. Keep in mind that this action is permanent.
+        <br />
+        <br />
+        <b>For Employers</b>
+        <br />
+        <b style="color:#212529">1. How do I post a job?</b><br />
+        After logging in, click on "Post a Job," fill in the required details, and submit it for approval. Your job listing will go live after verification.
+        <br />
+         <b style="color:#212529">2. Is there a cost to post jobs?</b><br />
+        We offer both free and premium job postings. Premium listings provide better visibility and reach. Contact our sales team for pricing details.
+        <br />
+        <b style="color:#212529">3. Can I manage applications through the portal?</b><br />
+        Yes, you can view, shortlist, and contact candidates directly from your employer dashboard.
+        <br />
+        <b style="color:#212529"> 4. How do I find the right candidates?</b><br />
+        Our AI-driven system suggests the best-matched candidates based on job descriptions, required skills, and experience levels. You can also search our resume database.
+        <br />
+        <b style="color:#212529">5. How do I contact a candidate?</b><br />
+        Once a candidate applies, you can message them through the portal or access their contact details if they have provided them.
+        <br />
+        <b style="color:#212529">
+            6. How can I edit or remove a job posting?
+        </b><br />
+        Go to your employer dashboard, find the job listing, and choose the "Edit" or "Remove" option.
+        <br />
+                                                        <b style="color:#212529">
+            7. Can I schedule interviews through the platform?
+        </b><br />
+        Yes! Our system allows you to schedule interviews and send notifications to candidates.
+        <br />
+                                                            <b style="color:#212529">
+            8. How do I delete my employer account?
+        </b><br />
+        In your account settings, select "Delete Account." Please note that this will remove all job postings and associated data.
+        <br />
+        <br />
+        <b>General Questions</b>
+        <br />
+                                                                <b style="color:#212529">
+            1. How secure is my data on the platform?
+        </b><br />
+        We prioritize data security and follow industry best practices to ensure your information remains safe and confidential.
+        <br />
+                                                                    <b style="color:#212529">
+            2. Do you offer customer support?
+        </b><br />
+        Yes! Our support team is available via email and chat to assist with any queries.
+        <br />
+                                                                        <b style="color:#212529">
+            3. How do I reset my password?
+        </b><br />
+        Click on "Forgot Password" on the login page, enter your email, and follow the instructions to reset your password.
+        <br />
+                                                                            <b style="color:#212529">
+            4. Can I use the portal on mobile devices?
+        </b><br />
+        Yes, our portal is fully mobile-friendly, and we also offer a mobile app for seamless job searching and hiring.
+        <br />
+                                                                                <b style="color:#212529">
+            5. How do I report a fraudulent job posting or employer?
+        </b><br />
+        If you suspect a fraudulent job or employer, click on the “Report” button on the listing or contact our support team immediately.
+	</div>
+</section>
+<!-- End blog-posts Area -->

@@ -54,7 +54,7 @@
                             <a href="/employer/job/@user.Id" class="btn btn-sm btn-outline-primary">Manage your job</a>
                         </div>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-3" hidden>
                         <img src="https://localhost:7211/images/employers/@user.UrlAvatar"
                              height="140"
                              style="margin-bottom: 10px"
@@ -206,15 +206,15 @@
             <div class="card h-100">
                 <div class="card-header d-flex align-items-center justify-content-between pb-0">
                     <div class="card-title mb-0">
-                        <h5 class="m-0 me-2">CV Statistics</h5>
-                        <small class="text-muted">@ViewBag.cvCount Total CVs</small>
+                        <h5 class="m-0 me-2">Resume Statistics</h5>
+                        <small class="text-muted">@ViewBag.cvCount Total Resumes</small>
                     </div>
                 </div>
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <div class="d-flex flex-column align-items-center gap-1">
                             <h2 class="mb-2">@ViewBag.cvCount</h2>
-                            <span>Total CVs</span>
+                            <span>Total Resumes</span>
                         </div>
                         <img src="~/images/default/cv-icon.png"
                              height="120"
@@ -249,7 +249,7 @@
                         }
                         else
                         {
-                            <li>No CVs available</li>
+                            <li>No Resumes available</li>
                         }
                     </ul>
                 </div>
